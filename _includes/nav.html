@@ -1,0 +1,10 @@
+{% for p in site.pages %}
+{% if page.lang == p.lang and p.nav %}
+<a class="{% if p.permalink == page.permalink %}page-link-active{% endif %}" href="{{ p.permalink }}" name="{{ p.title }}">{{ p.nav }}</a>
+{% endif %}
+{% endfor %}
+{% for l in site.data.lang %}
+{% if l.lang != page.lang %}
+<a href="{ l.lang }">{ l.displayName }</a>
+{% endif %}
+{% endfor %}
